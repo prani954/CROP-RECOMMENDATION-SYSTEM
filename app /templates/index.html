@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
+</head>
+
+<body>
+    <nav id="top">
+        <div id="left-top">
+            <div id="freshplants">
+                <img src="{{ url_for('static', filename='assets/rubber-plant.png') }}" alt="plant">
+                <p><a href="{{ url_for('crop_recommend') }}">Crop Recommendation</a></p>
+            </div>
+            <!-- <div id="location">
+                <p><span id="gray">Deliver to:</span><span>
+                        <select id="orange">
+                            <option>Delhi</option>
+                            <option>Mumbai</option>
+                            <option selected>Banglore</option>
+                            <option>Gurgoan</option>
+                        </select>
+                    </span></p>
+            </div> -->
+        </div>
+        <div id="right-top">
+            <!-- <div id="freshpass">
+                <img src="">
+                <p id="cont"><a href="#">Freshpass</a></p>
+                <p id="disc">Get extra 20% off</p>
+            </div> -->
+            <div id="freshclub">
+                <img src="">
+                <p><a href="#">Join Fresh Club<sup id="new">NEW</sup></a></p>
+            </div>
+        </div>
+    </nav>
+    <nav id="top2">
+        <div id="img">
+            <img src="{{ url_for('static', filename='assets/plant.png') }}" alt="plant">
+            <p><cite>A sapling you plant today will be counted tomorrow for sure</cite></p>
+        </div>
+        <div id="ul">
+            <ul>
+                <!-- <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Search</a></li> -->
+                <!-- <li><a href="#"><i class="fa-solid fa-star"></i> Offers</a></li> -->
+                <!-- <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li> -->
+                <li><a href="#"><i class="fa-regular fa-comment"></i> Help</a></li>
+                <li><a href="{{ url_for('crop_recommend') }}"><i class="fa-brands fa-canadian-maple-leaf"></i>Find crops</a></li>
+                <!-- <li><a href="#"><i class="fa-solid fa-user"></i>
+                        <select id="login">
+                            <option>Log In</option>
+                            <option>Sign up</option>
+                        </select>
+                    </a></li> -->
+            </ul>
+        </div>
+    </nav>
+    <div id="Hero-Image">
+        <div id="hero-overlay">
+            <!-- <input type="text" placeholder="Shop Now" class="search"> -->
+            <div id="container-details">
+                <h2 id="header-div">
+                    <b><span id = "hey">Hey There!</span><br><br>Find out the most suitable crop <br> to grow in your farm</b>
+                  </h2>
+                <br>  
+                <div id="login-details">
+                    <button type="button" id="sign-up">Sign Up</button>
+                    <!-- <div id="lbtn-content">Already have an account?</div> -->
+                    <button id="login-btn">Login</button>
+                </div>  
+            </div>       
+        </div>
+        
+    </div>
+    <!-- <div id="card-container">
+        <div id="card1">
+            <div id="c-image1">
+                <img src="heroimg.jpg" alt="aloe-vera">
+            </div>
+            <div id="c-content1">
+                <h3>Fresh Aloevera</h3>
+                <p>250/- per plant 25% off</p>
+            </div>
+        </div>
+        <div id="card1">
+            <div id="c-image1">
+                <img src="heroimg.jpg" alt="aloe-vera">
+            </div>
+            <div id="c-content1">
+                <h3>Fresh Aloevera</h3>
+                <p>250/- per plant 25% off</p>
+            </div>
+        </div>
+        <div id="card1">
+            <div id="c-image1">
+                <img src="heroimg.jpg" alt="aloe-vera">
+            </div>
+            <div id="c-content1">
+                <h3>Fresh Aloevera</h3>
+                <p>250/- per plant 25% off</p>
+            </div>
+        </div>
+        <div id="card1">
+            <div id="c-image1">
+                <img src="heroimg.jpg" alt="aloe-vera">
+            </div>
+            <div id="c-content1">
+                <h3>Fresh Aloevera</h3>
+                <p>250/- per plant 25% off</p>
+            </div>
+        </div>
+        <div id="card1">
+            <div id="c-image1">
+                <img src="heroimg.jpg" alt="aloe-vera">
+            </div>
+            <div id="c-content1">
+                <h3>Fresh Aloevera</h3>
+                <p>250/- per plant 25% off</p>
+            </div>
+        </div>
+    </div> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
+

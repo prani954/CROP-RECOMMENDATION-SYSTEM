@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 2rem;
+            margin: 9rem auto;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .row {
+            width: 100%;
+        }
+
+        .col-sm {
+            padding: 1rem;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: blanchedalmond;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h1 {
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background-color: #17a2b8;
+            color: black;
+            font-weight: bold;
+            border: none;
+            padding: 0.5rem 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #138496;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <h1>Sorry we couldn't process your request currently. <br> Please try again</h1>
+                    <a href="index.html">
+                        <button type="submit" class="btn">Try again</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

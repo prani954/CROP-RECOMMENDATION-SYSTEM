@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            padding: 20px;
+            margin: 12rem 0;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .col {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-top: 50px;
+            /* Adjust as needed */
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h1 class="text-center"><b>You should grow <strong>{{ prediction }}</strong> in your farm</b></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
