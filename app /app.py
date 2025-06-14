@@ -1,41 +1,48 @@
-#------------------------CROP RECOMMENDATION SYSTEM-------------------------
-from flask import Flask, render_template, request, Markup
+#----------------------------------------------------------------------------------------
+from flask import Flask, render_template, request
 import numpy as np
 import pickle
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+crop_recommendation_model_path = os.path.join(BASE_DIR, 'models', 'model_rf.pkl')
 
 # Load the crop recommendation model
-crop_recommendation_model_path = 'models/model_rf.pkl'
+# crop_recommendation_model_path = 'models/model_rf.pkl'
 
-try:
+if crop_recommendation_model_path:
     crop_recommendation_model = pickle.load(open(crop_recommendation_model_path, 'rb'))
-except Exception as e:
-    print(f"Error loading model: {e}")
+    print("Model loaded successfully: {crop_recommendation_model}")
+else:
+    crop_recommendation_model = None  # prevent undefined variable
+    print(f"Error loading model")
 
 # Mapping from predicted index to crop name
 crop_mapping = {
-    1: 'rice',
-    2: 'maize',
-    3: 'chickpea',
-    4: 'kidneybeans',
-    5: 'pigeonpeas',
-    6: 'mothbeans',
-    7: 'mungbean',
-    8: 'blackgram',
-    9: 'lentil',
-    10: 'pomegranate',
-    11: 'banana',
-    12: 'mango',
-    13: 'grapes',
-    14: 'watermelon',
-    15: 'muskmelon',
-    16: 'apple',
-    17: 'orange',
-    18: 'papaya',
-    19: 'coconut',
-    20: 'cotton',
-    21: 'jute',
-    22: 'coffee'
+    0: 'rice',
+    1: 'maize',
+    2: 'chickpea',
+    3: 'kidneybeans',
+    4: 'pigeonpeas',
+    5: 'mothbeans',
+    6: 'mungbean',
+    7: 'blackgram',
+    8: 'lentil',
+    9: 'pomegranate',
+    10: 'banana',
+    11: 'mango',
+    12: 'grapes',
+    13: 'watermelon',
+    14: 'muskmelon',
+    15: 'apple',
+    16: 'orange',
+    17: 'papaya',
+    18: 'coconut',
+    19: 'cotton',
+    20: 'jute',
+    21: 'coffee'
 }
+
 
 app = Flask(__name__)
 
@@ -76,8 +83,11 @@ def crop_prediction():
 
             # Prepare the data for prediction
             data = np.array([[N, P, K, temperature, humidity, ph]])
-            my_prediction = crop_recommendation_model.predict(data)
-            final_prediction = my_prediction[0]
+            if crop_recommendation_model is not None:
+                my_prediction = crop_recommendation_model.predict(data)
+                final_prediction = my_prediction[0]
+            else:
+                final_prediction = None
 
             # Debug: Check prediction result
             print(f"Prediction result (index): {final_prediction}")
@@ -96,3 +106,5 @@ def crop_prediction():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
